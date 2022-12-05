@@ -1,7 +1,7 @@
 #language:pt
 
-	Funcionalidade: Realizar Login
-		Testes da API de login
+Funcionalidade: Realizar Login
+	Testes da API de login
 	
 	Cenario: Realizar Login com Sucesso
 		Dado que tenha um payload valido da API de Login
