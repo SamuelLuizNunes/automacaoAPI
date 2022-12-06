@@ -34,4 +34,11 @@ public class LoginSteps {
 	public void armazenoOTokenQueReceboDoResponseDeLogin() {
 	    LoginMap.token = RestUtils.getResponse().jsonPath().get("token");
 	}
+	
+	@Dado("que tenha realizado o login com dados validos")
+	public void queTenhaRealizadoOLoginComDadosValidos() {
+		queTenhaUmPayloadValidoDaAPIDeLogin();
+		envioUmaRequisicaoDoTipoPOSTDeLogin();
+		armazenoOTokenQueReceboDoResponseDeLogin();
+	}
 }
