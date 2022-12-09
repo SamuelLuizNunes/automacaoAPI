@@ -21,7 +21,6 @@ public class PlataformaFilmesTest {
 	
 	@BeforeAll
 	public static void validarLoginMap() {
-		RestUtils.setBaseURI("http://192.168.0.6:8080/");
 		LoginMap.initLogin();
 		Response response = RestUtils.post(LoginMap.getLogin(), ContentType.JSON, "auth");
 		
@@ -31,8 +30,6 @@ public class PlataformaFilmesTest {
 	
 	@Test
 	public void validarLogin() {
-		RestUtils.setBaseURI("http://192.168.0.6:8080/");
-		
 		String json = "{"
 				+ "    \"email\": \"aluno@email.com\","
 				+ "    \"senha\": \"123456\""

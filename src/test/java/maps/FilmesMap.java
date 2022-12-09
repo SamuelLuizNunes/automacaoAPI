@@ -43,7 +43,7 @@ public class FilmesMap {
 		categoria1 = new HashMap<>();		
 		categoria2 = new HashMap<>();
 		
-		categoria1.put("tipo", "Acao");
+		categoria1.put("tipo", "Terror");
 		categoria2.put("tipo", "Comedia");
 		listCategoria.add(categoria1);
 		listCategoria.add(categoria2);
@@ -63,11 +63,9 @@ public class FilmesMap {
 	
 	public static void initFilme() {
 		filme = new HashMap<>();
-		filme.put("nome", "Alerta vermelhor");
-		filme.put("descricao", "Um alerta vermelho da Interpol e emitido e o agente do FBI John Ha"
-				+ "rtley assume o caso. Durante sua busca, ele se ve diante de um assalto ousado e e fo"
-				+ "rçado a se aliar ao maior ladrao de arte da historia");
-		filme.put("duracao", 1.35);
+		filme.put("nome", "Mascara");
+		filme.put("descricao", "O mascara");
+		filme.put("duracao", 2.10);
 		filme.put("categorias", listCategoria);
 		filme.put("plataformas", listPlataforma);
 	}

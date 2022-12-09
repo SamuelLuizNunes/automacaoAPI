@@ -24,4 +24,9 @@ public class FilmeSteps {
 	    FilmesMap.id = RestUtils.getResponse().jsonPath().get("id");
 	    
 	}
+	
+	@Quando("realizo uma requisicao do tipo Get de Filme atraves do nome")
+	public void realizoUmaRequisicaoDoTipoGetDeFilmeAtravesDoNome() {
+	    RestUtils.get(FilmesMap.getHeader(), "filmes");
+	}
 }
