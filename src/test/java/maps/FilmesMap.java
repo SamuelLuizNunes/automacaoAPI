@@ -63,8 +63,8 @@ public class FilmesMap {
 	
 	public static void initFilme() {
 		filme = new HashMap<>();
-		filme.put("nome", "Mascara");
-		filme.put("descricao", "O mascara");
+		filme.put("nome", "furiosos");
+		filme.put("descricao", "furiosos");
 		filme.put("duracao", 2.10);
 		filme.put("categorias", listCategoria);
 		filme.put("plataformas", listPlataforma);

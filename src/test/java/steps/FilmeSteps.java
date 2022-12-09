@@ -1,5 +1,8 @@
 package steps;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -27,6 +30,20 @@ public class FilmeSteps {
 	
 	@Quando("realizo uma requisicao do tipo Get de Filme atraves do nome")
 	public void realizoUmaRequisicaoDoTipoGetDeFilmeAtravesDoNome() {
-	    RestUtils.get(FilmesMap.getHeader(), "filmes");
+		Map<String, String> param = new HashMap<>();
+		String nome = FilmesMap.getFilme().get("nome").toString();
+		param.put("nome", nome);
+	    RestUtils.get(FilmesMap.getHeader(), param, "filmes");
+	}
+	
+	@Dado("altero o indice {int} da lista de categorias de filme com os valores")
+	public void alteroOIndiceDaListaDeCategoriasDeFilmeComOsValores(int indice, Map<String, String> map) {
+		FilmesMap.getListCategoria().get(indice).putAll(map);
+		
+	}
+	
+	@Quando("realizo uma requisicao do tipo PUT de Filme")
+	public void realizoUmaRequisicaoDoTipoPUTDeFilme() {
+	    RestUtils.put(FilmesMap.getHeader(), FilmesMap.getFilme(), ContentType.JSON, "filmes/" + FilmesMap.id);
 	}
 }

@@ -43,6 +43,21 @@ public class RestUtils {
 				.thenReturn();
 	}
 	
+	public static Response put(Map<String, String> header, Object json, ContentType contentType, String endpoint) {
+		return response = RestAssured.given()
+				.relaxedHTTPSValidation()		
+				.contentType(contentType)
+				.headers(header)
+				.log().all()
+				.body(json)
+				.when()
+				.put(endpoint)
+				.then()
+				.log().all()
+				.extract().response();
+	}
+	
+	
 	public static Response get(Map<String, String> header, String endpoint) {
 		return response = RestAssured.given()
 				.relaxedHTTPSValidation()
@@ -50,5 +65,18 @@ public class RestUtils {
 				.when()
 				.get(endpoint)
 				.thenReturn();
+	} 
+	
+	public static Response get(Map<String, String> header,Map<String, String> parametro, String endpoint) {
+		return response = RestAssured.given()
+				.relaxedHTTPSValidation()
+				.headers(header)
+				.params(parametro)
+				.log().all()
+				.when()
+				.get(endpoint)
+				.then()
+				.log().all()
+				.extract().response();
 	} 
 }
