@@ -20,7 +20,7 @@ public class RunnerTest {
 	
 	@BeforeClass
 	public static void beforeClass() throws Exception{
-		RestUtils.setBaseURI("http://192.168.0.6:8080/");
+		RestUtils.setBaseURI("http://192.168.0.6:8181/");
 	}
 }
  
